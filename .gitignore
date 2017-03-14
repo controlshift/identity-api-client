@@ -48,3 +48,5 @@ pkg
 # For rubinius:
 #*.rbc
 .idea
+.byebug_history
+example.rb
