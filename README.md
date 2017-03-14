@@ -4,6 +4,12 @@
 
 API Client for 38 Degree's Identity API
 
+## Install
+
+This api client is distributed as a ruby gem.
+
+`gem install identity-api-client`
+
 ## Usage
 
 ```ruby
