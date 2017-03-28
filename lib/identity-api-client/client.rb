@@ -22,6 +22,10 @@ module IdentityApiClient
       @search ||= IdentityApiClient::Search.new(client: self)
     end
 
+    def actions
+      @actions ||= IdentityApiClient::Actions.new(client: self)
+    end
+
     private
 
     def extract_data_from_params(params)

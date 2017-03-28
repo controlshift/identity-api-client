@@ -20,3 +20,26 @@ person.first_name
 person.last_name
 => 'Smith'
 ```
+
+Example of setting up a target list and sending an email
+
+```ruby
+identity = IdentityApiClient.new(host: 'id.test.com', api_token: 'abc123')
+mailing = identity.mailings.create({name: "My first API mailing"})
+mailing.id
+=> 1
+
+mailing = identity.mailings.find_by_id(1)
+mailing.update({body: "<p>Bla bla</p>", subject: "Hey!"})
+
+action = identity.actions.find_by(name: "My first petition")
+action.id
+=> 56
+
+rules = {"include":{"condition":"AND","rules":[{"id":"has-taken-action","field":"has-taken-action","type":"string","operator":"in","value":[action.id]}]},"exclude":{"condition":"OR","rules":[{"id":"noone","field":"noone","type":"string","operator":"equal","value":"on"}]}}
+
+search = identity.searches.create({rules: rules})
+
+mailing.send(search.id)
+=> true
+```
