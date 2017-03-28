@@ -1,4 +1,7 @@
 require 'vertebrae'
+# dirty patch
+spec = Gem::Specification.find_by_name("vertebrae")
+require spec.gem_dir + '/lib/api.rb'
 require 'identity-api-client/client'
 require 'identity-api-client/base'
 require 'identity-api-client/member'
