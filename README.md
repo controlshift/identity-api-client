@@ -40,6 +40,6 @@ rules = {"include":{"condition":"AND","rules":[{"id":"has-taken-action","field":
 
 search = identity.searches.create({rules: rules})
 
-mailing.send(search.id)
+mailing.send_mailing(search.id)
 => true
 ```
