@@ -7,7 +7,7 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
   gem 'webmock'
-  gem "rspec", "~> 3.5.0"
+  gem "rspec"
   gem "rdoc", "~> 3.12"
   gem "bundler", "~> 1.0"
   gem "juwelier", "~> 2.1.0"
