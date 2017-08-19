@@ -19,6 +19,8 @@ describe IdentityApiClient::Member do
       resp = subject.member.details('abcdef1234567890')
 
       expect(resp.first_name).to eq('Joe')
+      expect(resp.last_name).to eq('Bloggs')
+      expect(resp.email).to eq('joe@bloggs.com')
     end
   end
 end
