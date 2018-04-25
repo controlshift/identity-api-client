@@ -1,0 +1,18 @@
+{
+  "first_name": "Joe",
+  "last_name": "Bloggs",
+  "email": "joe@bloggs.com",
+
+  "consents": [
+    {
+      "public_id": "terms_of_service_1.0",
+      "consent_level": "explicit_opt_in",
+      "consent_created_at": "2016-12-30 23:30:13 +0000"
+    },
+    {
+      "public_id": "privacy_policy_2.6",
+      "consent_level": "implicit",
+      "consent_created_at": "2015-01-01 10:10:10 +0000"
+    }
+  ]
+}
