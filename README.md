@@ -14,9 +14,11 @@ This api client is distributed as a ruby gem.
 
 ```ruby
 identity = IdentityApiClient.new(host: 'id.test.com', api_token: 'abc123')
-person = identity.member.details('abc123')
+person = identity.member.details('abc123', load_current_consents: true)
 person.first_name 
 => 'Jane'
 person.last_name
 => 'Smith'
+person.consents.first.public_id
+=> 'terms_of_service_1.0'
 ```
