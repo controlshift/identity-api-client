@@ -26,6 +26,7 @@ describe IdentityApiClient::Member do
       end
     end
 
+
     context 'with load_current_consents' do
       let(:expected_request) { {'guid' => 'abcdef1234567890', 'api_token' => '1234567890abcdef', 'load_current_consents' => true}.to_json }
       let(:body) { fixture('details_with_consents.json') }
@@ -39,6 +40,19 @@ describe IdentityApiClient::Member do
 
         expect(resp.consents.count).to eq 2
         expect(resp.consents[0].public_id).to eq 'terms_of_service_1.0'
+      end
+    end
+
+    context 'with email passed' do
+      let(:expected_request) { {'email' => 'test@example.com', 'api_token' => '1234567890abcdef'}.to_json }
+      let(:body) { fixture('details.json') }
+
+      it 'should get member details back from the API' do
+        resp = subject.member.details('test@example.com')
+
+        expect(resp.first_name).to eq('Joe')
+        expect(resp.last_name).to eq('Bloggs')
+        expect(resp.email).to eq('joe@bloggs.com')
       end
     end
   end
