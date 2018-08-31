@@ -18,7 +18,7 @@ describe IdentityApiClient::Member do
       let(:body) { fixture('details.json') }
 
       it 'should get member details back from the API' do
-        resp = subject.member.details('abcdef1234567890')
+        resp = subject.member.details(guid: 'abcdef1234567890')
 
         expect(resp.first_name).to eq('Joe')
         expect(resp.last_name).to eq('Bloggs')
@@ -32,7 +32,7 @@ describe IdentityApiClient::Member do
       let(:body) { fixture('details_with_consents.json') }
 
       it 'should get member details with consents back from the API' do
-        resp = subject.member.details('abcdef1234567890', load_current_consents: true)
+        resp = subject.member.details(guid: 'abcdef1234567890', load_current_consents: true)
 
         expect(resp.first_name).to eq('Joe')
         expect(resp.last_name).to eq('Bloggs')
@@ -48,7 +48,7 @@ describe IdentityApiClient::Member do
       let(:body) { fixture('details.json') }
 
       it 'should get member details back from the API' do
-        resp = subject.member.details('test@example.com')
+        resp = subject.member.details(email: 'test@example.com')
 
         expect(resp.first_name).to eq('Joe')
         expect(resp.last_name).to eq('Bloggs')
