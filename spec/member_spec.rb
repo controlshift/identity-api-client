@@ -5,6 +5,14 @@ describe IdentityApiClient::Member do
 
   let(:request_path) { '/api/member/details' }
 
+  describe 'failure' do
+    context "with no email or guid passed" do
+      it "should raise error" do
+        expect { subject.member.details() }.to raise_error "Must have one of guid or email"
+      end
+    end
+  end
+
   describe 'success' do
     let(:status) { 200 }
 

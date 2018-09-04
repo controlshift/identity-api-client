@@ -5,7 +5,7 @@ module IdentityApiClient
         params = {'guid' => guid, 'api_token' => client.connection.configuration.options[:api_token]}
       elsif email.present?
         params = {'email' => email, 'api_token' => client.connection.configuration.options[:api_token]}
-      elsif
+      else
         raise "Must have one of guid or email"
       end
 
