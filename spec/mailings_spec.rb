@@ -3,10 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe IdentityApiClient::Mailings do
   subject { IdentityApiClient.new(host: 'test.com', api_token: '1234567890abcdef') }
 
-  
-
   describe 'creating a new mailing' do
-
     let(:status) { 200 }
     let(:body) { fixture('new_mailing_response.json') }
     let(:request_path) { '/api/mailings/new' }
@@ -25,7 +22,7 @@ describe IdentityApiClient::Mailings do
 
   end
 
-  describe 'retrieving a mailing by ID' do 
+  describe 'retrieving a mailing by ID' do
     let(:status) { 200 }
     let(:body) { fixture('get_mailing_response.json') }
     let(:request_path) { '/api/mailings/5' }

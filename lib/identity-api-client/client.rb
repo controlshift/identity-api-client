@@ -26,6 +26,14 @@ module IdentityApiClient
       @actions ||= IdentityApiClient::Actions.new(client: self)
     end
 
+    def list
+      @list ||= IdentityApiClient::List.new(client: self)
+    end
+
+    def lists
+      @lists ||= IdentityApiClient::Lists.new(client: self)
+    end
+
     private
 
     def extract_data_from_params(params)
@@ -34,8 +42,9 @@ module IdentityApiClient
 
     def default_options
       {
-        user_agent: 'IdentityApiClient'
+        user_agent: 'IdentityApiClient',
       }
     end
+
   end
 end

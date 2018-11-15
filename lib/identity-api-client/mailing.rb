@@ -3,7 +3,7 @@ module IdentityApiClient
     attr_accessor :id
 
     def attributes
-      resp = client.get_request("/api/mailings/#{id}")
+      resp = client.get_request("/api/mailings/#{id}?api_token=#{client.connection.configuration.options[:api_token]}")
       if resp.status < 400
         return resp.body
       else
