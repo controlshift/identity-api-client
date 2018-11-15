@@ -1,7 +1,29 @@
+require 'vertebrae'
+
 module IdentityApiClient
   class Client < Vertebrae::API
     def member
       @member ||= IdentityApiClient::Member.new(client: self)
+    end
+
+    def mailings
+      @mailings ||= IdentityApiClient::Mailings.new(client: self)
+    end
+
+    def mailing
+      @mailing ||= IdentityApiClient::Mailing.new(client: self)
+    end
+
+    def searches
+      @searches ||= IdentityApiClient::Searches.new(client: self)
+    end
+
+    def search
+      @search ||= IdentityApiClient::Search.new(client: self)
+    end
+
+    def actions
+      @actions ||= IdentityApiClient::Actions.new(client: self)
     end
 
     private
