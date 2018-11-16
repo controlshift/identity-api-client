@@ -44,5 +44,17 @@ module IdentityApiClient
       resp = client.post_request("/api/searches/#{id}/push_to_list", params)
       resp.status == 202
     end
+
+    def delete
+      params = {
+        'api_token' => client.connection.configuration.options[:api_token]
+      }
+      resp = client.delete_request("/api/searches/#{id}", params)
+      if resp.status < 400
+        return self
+      else
+        return resp.body['errors']
+      end
+    end
   end
 end
