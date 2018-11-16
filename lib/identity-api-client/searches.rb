@@ -1,7 +1,7 @@
 module IdentityApiClient
   class Searches < Base
     def find_by_id(id)
-      resp = client.get_request("/api/searches/#{id}")
+      resp = client.get_request("/api/searches/#{id}?api_token=#{client.connection.configuration.options[:api_token]}")
       if resp.status == 200
         return IdentityApiClient::Search.new(client: client, id: id)
       else

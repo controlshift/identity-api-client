@@ -2,6 +2,28 @@ module IdentityApiClient
   class Search < Base
     attr_accessor :id
 
+    def attributes
+      resp = client.get_request("/api/searches/#{id}?api_token=#{client.connection.configuration.options[:api_token]}")
+      if resp.status < 400
+        return resp.body
+      else
+        return resp.body['errors']
+      end
+    end
+
+    def update(search_attributes)
+      params = {
+        'api_token' => client.connection.configuration.options[:api_token],
+        'search' => search_attributes
+      }
+      resp = client.put_request("/api/searches/#{id}", params)
+      if resp.status < 400
+        return self
+      else
+        return resp.body['errors']
+      end
+    end
+
     def perform(params = {})
       params = { 'api_token' => client.connection.configuration.options[:api_token] }.merge(params)
       resp = client.post_request("/api/searches/#{id}/perform", params)
