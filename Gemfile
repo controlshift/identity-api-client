@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'vertebrae', '~> 0.4', '>= 0.4.1'
+gem 'vertebrae', '~> 0.5'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
