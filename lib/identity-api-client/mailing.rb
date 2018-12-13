@@ -1,6 +1,7 @@
 module IdentityApiClient
   class Mailing < Base
     attr_accessor :id
+    attr_accessor :name
 
     def attributes
       resp = client.get_request("/api/mailings/#{id}?api_token=#{client.connection.configuration.options[:api_token]}")
