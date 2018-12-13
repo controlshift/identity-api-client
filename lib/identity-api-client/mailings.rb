@@ -36,7 +36,7 @@ module IdentityApiClient
     def search(query)
       resp = client.get_request("/api/mailings/search?query=#{query}&api_token=#{client.connection.configuration.options[:api_token]}")
       if resp.status == 200
-        return resp.body.map { |l| IdentityApiClient::Mailing.new(client: client, id: l['id']) }
+        return resp.body.map { |l| IdentityApiClient::Mailing.new(client: client, id: l['id'], name: l['name']) }
       else
         false
       end
