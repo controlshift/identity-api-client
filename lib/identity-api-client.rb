@@ -3,6 +3,7 @@ require 'vertebrae'
 spec = Gem::Specification.find_by_name("vertebrae")
 require spec.gem_dir + '/lib/api.rb'
 require 'identity-api-client/base'
+require 'identity-api-client/mailing_api_base'
 
 require 'identity-api-client/actions'
 require 'identity-api-client/client'
