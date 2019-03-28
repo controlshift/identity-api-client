@@ -33,6 +33,15 @@ module IdentityApiClient
       end
     end
 
+    def clone(id)
+      resp = client.post_request("/api/mailings/#{id}/clone")
+      if resp.status == 201
+        return resp.body['id']
+      else
+        false
+      end
+    end
+
     def search(query)
       resp = client.get_request(route_url("/api/mailings/search?query=#{query}&api_token=#{client.connection.configuration.options[:api_token]}"))
       if resp.status == 200
