@@ -3,6 +3,6 @@ rvm:
 cache: bundler
 before_install:
   - gem install bundler
- script:
+script:
   - bundle exec rspec
   - bundle exec rubocop 
