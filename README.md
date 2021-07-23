@@ -1,6 +1,6 @@
 # identity-api-client
 
-[![Build Status](https://travis-ci.org/controlshift/identity-api-client.svg?branch=master)](https://travis-ci.org/controlshift/identity-api-client)
+[![CI Status](https://github.com/controlshift/identity-api-client/actions/workflows/ci.yml/badge.svg)](https://github.com/controlshift/identity-api-client/actions/workflows/ci.yml)
 
 API Client for 38 Degree's Identity API
 
