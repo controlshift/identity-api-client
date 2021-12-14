@@ -9,7 +9,7 @@ group :development do
   gem 'pry-byebug', '~> 3.4'
   gem 'webmock', '~> 3.0', '>= 3.0.1'
   gem 'rspec', '~> 3.6'
-  gem 'rdoc', "~> 3.12"
+  gem 'rdoc', ">= 6.3.1"
   gem 'bundler'
   gem 'juwelier'
   gem 'simplecov', ">= 0"
