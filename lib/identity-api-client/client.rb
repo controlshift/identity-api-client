@@ -1,5 +1,3 @@
-require 'json'
-
 module IdentityApiClient
   class Client < Vertebrae::API
     def member
@@ -9,7 +7,7 @@ module IdentityApiClient
     private
 
     def extract_data_from_params(params)
-      JSON.generate(params)
+      params.to_json
     end
 
     def default_options

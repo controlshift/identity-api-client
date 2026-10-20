@@ -1,4 +1,3 @@
-require 'json'
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe IdentityApiClient::Member do
@@ -33,7 +32,7 @@ describe IdentityApiClient::Member do
     end
 
     context 'without load_current_consents' do
-      let(:expected_request) { JSON.generate('guid' => 'abcdef1234567890', 'api_token' => '1234567890abcdef') }
+      let(:expected_request) { { 'guid' => 'abcdef1234567890', 'api_token' => '1234567890abcdef' }.to_json }
       let(:body) { fixture('details.json') }
 
       it 'should get member details back from the API' do
@@ -47,7 +46,7 @@ describe IdentityApiClient::Member do
 
 
     context 'with load_current_consents' do
-      let(:expected_request) { JSON.generate('guid' => 'abcdef1234567890', 'api_token' => '1234567890abcdef', 'load_current_consents' => true) }
+      let(:expected_request) { { 'guid' => 'abcdef1234567890', 'api_token' => '1234567890abcdef', 'load_current_consents' => true }.to_json }
       let(:body) { fixture('details_with_consents.json') }
 
       it 'should get member details with consents back from the API' do
@@ -63,7 +62,7 @@ describe IdentityApiClient::Member do
     end
 
     context 'with email passed' do
-      let(:expected_request) { JSON.generate('email' => 'test@example.com', 'api_token' => '1234567890abcdef') }
+      let(:expected_request) { { 'email' => 'test@example.com', 'api_token' => '1234567890abcdef' }.to_json }
       let(:body) { fixture('details.json') }
 
       it 'should get member details back from the API' do
