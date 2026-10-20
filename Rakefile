@@ -11,21 +11,6 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
-require 'juwelier'
-Juwelier::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "identity-api-client"
-  gem.homepage = "http://github.com/controlshift/identity-api-client"
-  gem.license = "MIT"
-  gem.summary = %Q{API Client for 38 Degree's Identity API}
-  gem.description = %Q{Provides a simple ruby binding to 38dgs identity API}
-  gem.email = 'nathan@controlshiftlabs.com'
-  gem.authors = ['Nathan Woodhull']
-
-  # dependencies defined in Gemfile
-end
-Juwelier::RubygemsDotOrgTasks.new
-
 require 'rspec/core'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |spec|
