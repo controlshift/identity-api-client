@@ -11,6 +11,16 @@ describe IdentityApiClient::Member do
         expect { subject.member.details() }.to raise_error "Must have one of guid or email"
       end
     end
+
+    context 'when Identity responds with 404' do
+      before(:each) do
+        stub_post(request_path).to_return(status: 404, body: '404 page not found')
+      end
+
+      it 'returns nil instead of raising' do
+        expect(subject.member.details(guid: 'abcdef1234567890')).to be_nil
+      end
+    end
   end
 
   describe 'success' do

@@ -15,6 +15,8 @@ module IdentityApiClient
 
       resp = client.post_request('/api/member/details', params)
       resp.body
+    rescue Faraday::ResourceNotFound
+      nil
     end
   end
 end
