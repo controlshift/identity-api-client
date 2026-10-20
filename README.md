@@ -2,7 +2,7 @@
 
 [![CI Status](https://github.com/controlshift/identity-api-client/actions/workflows/ci.yml/badge.svg)](https://github.com/controlshift/identity-api-client/actions/workflows/ci.yml)
 
-API client for the [Identity](https://github.com/controlshift/identity) service
+API client for the [Identity](https://github.com/controlshift/identity-api-client) service
 
 ## Install
 
