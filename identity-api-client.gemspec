@@ -5,7 +5,7 @@ version = File.read(File.join(__dir__, 'VERSION')).strip
 Gem::Specification.new do |s|
   s.name = 'identity-api-client'
   s.version = version
-  s.authors = ['Nathan Woodhull']
+  s.authors = ['Nathan Woodhull', 'Owens Ehimen', 'Diego Marcet', 'Grey Moore']
   s.email = 'nathan@controlshiftlabs.com'
   s.homepage = 'https://github.com/controlshift/identity-api-client'
   s.license = 'MIT'
