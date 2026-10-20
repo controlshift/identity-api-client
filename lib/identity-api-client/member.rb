@@ -15,6 +15,10 @@ module IdentityApiClient
 
       resp = client.post_request('/api/member/details', params)
       resp.body
+    rescue Vertebrae::ResponseError => e
+      return nil if e.status_code == 404
+
+      raise
     rescue Faraday::ResourceNotFound
       nil
     end

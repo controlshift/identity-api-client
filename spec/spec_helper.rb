@@ -30,7 +30,8 @@ def stub_post(path)
 end
 
 def stub_identity_request(method, path)
-  stub_request(method, "https://test.com" + path)
+  path_suffix = path.to_s.delete_prefix('/')
+  stub_request(method, %r{\Ahttps://test\.com/+#{Regexp.escape(path_suffix)}\z})
 end
 
 def fixture_path
