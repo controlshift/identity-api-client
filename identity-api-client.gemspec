@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.email = ['talk@controlshiftlabs.com']
   s.homepage = 'https://github.com/controlshift/identity-api-client'
   s.license = 'MIT'
-  s.summary = 'API client for the Identity service'
-  s.description = 'Ruby client for the Identity member API'
+  s.summary = 'Ruby client for the Identity API'
+  s.description = 'API client for the Identity API'
   s.required_ruby_version = '>= 3.4.0'
 
   s.files = Dir.chdir(__dir__) do
